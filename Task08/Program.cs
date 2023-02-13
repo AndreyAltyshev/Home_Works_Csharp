@@ -3,13 +3,13 @@
 5 -> 2, 4
 8 -> 2, 4, 6, 8/*  */
 
-Console.Write("Введите число N ");
-int number = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число N ");                              //выводим запрос на ввод данных
+int number = Convert.ToInt32(Console.ReadLine());               // ввод данных и объявление переменых, count= 2 так как это первое чётное число после единицы
 int count = 2;
-if (number > 1)
+if (number > 1)                                                 //в нужном нам диапазон от 1 до N первое чётное число 2 всё что меньше 1 отсееваем.
 {
-    Console.WriteLine($"Все чётные числа от 1 до {number}");
-    while (count <= number)
+    Console.WriteLine($"Все чётные числа от 1 до {number}");    
+    while (count <= number)                                     //определяем все нужные чётные числа в нужном диапазоне
     {
         Console.Write($"{count}, ");
         count += 2;
