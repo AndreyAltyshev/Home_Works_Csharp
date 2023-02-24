@@ -45,7 +45,7 @@ int CountIfEvenEllementArr(int[] arr)   //метод счётчик чётных
 }
 
 // programm
-int volume = Prompt("Сколько эллементов в массиве ");
+int volume = Prompt("Введите колличество эллементов массива ");
 int minElem = 100; //Prompt("минимльный эллемент массива ");
 int maxElem = 999; //Prompt("Максимальный эллемент миассива ");
 int[] array = CreateArrayRndInt(volume, minElem, maxElem);

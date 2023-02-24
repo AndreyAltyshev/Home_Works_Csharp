@@ -44,8 +44,8 @@ int SumNotEvenEllemArray(int[] arr)   //метод считающий сумму
     return sum;
 }
 // programm
-int volume = Prompt("Сколько эллементов в массиве ");
-int minElem = Prompt("минимльно возможный эллемент массива: ");
+int volume = Prompt("Введите колличество эллементов массива ");
+int minElem = Prompt("Минимльно возможный эллемент массива: ");
 int maxElem = Prompt("Максимальный возможный эллемент массива: ");
 int[] array = CreateArrayRndInt(volume, minElem, maxElem);
 Console.WriteLine("Исходный массив");
