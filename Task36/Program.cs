@@ -34,6 +34,7 @@ int Prompt(string mess)     //метод ввода
     int num = Convert.ToInt32(Console.ReadLine());
     return num;
 }
+
 int SumNotEvenEllemArray(int[] arr)   //метод считающий сумму нечётных эллементов
 {
     int sum = 0;
