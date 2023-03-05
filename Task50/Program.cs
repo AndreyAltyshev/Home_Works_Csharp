@@ -32,13 +32,11 @@ int[,] CreateArrayIntRnd(int str, int col, int min, int max)
 
 void PrintMatrix(int[,] arr)
 {
-    int rows = arr.GetUpperBound(0) + 1;
-    int colums = arr.Length / rows;
-    for (int i = 0; i < rows; i++)
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j < colums; j++)
+        for (int j = 0; j < arr.GetLength(1); j++)
         {
-            Console.Write($"{arr[i, j], 6}");
+            Console.Write($"{arr[i, j],6}");
         }
         Console.WriteLine();
     }
@@ -46,7 +44,8 @@ void PrintMatrix(int[,] arr)
 
 void SearchElement(int[,] arr, int str, int clmn)
 {
-    if (str < arr.GetLength(0) && clmn < arr.GetLength(1)) Console.WriteLine($"Эллемент массиваа с индексом строки {str} и столбца {clmn} -> {arr[str, clmn]}");
+    if (str < arr.GetLength(0) && clmn < arr.GetLength(1))
+        Console.WriteLine($"Эллемент массиваа с индексом строки {str} и столбца {clmn} -> {arr[str, clmn]}");
     else Console.WriteLine($"Эллемента массиваа с индексом строки {str} и столбца {clmn} не существует");
 }
 

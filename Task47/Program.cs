@@ -30,8 +30,8 @@ double[,] CreateMatrixDobleRnd(int str, int colume, int min, int max)
 }
 void PrintMatrix(double[,] arr)
 {
-    int rows = arr.GetUpperBound(0) + 1;
-    int colums = arr.Length / rows;
+    int rows = arr.GetLength(0);
+    int colums = arr.GetLength(1);
     for (int i = 0; i < rows; i++)
     {
         for (int j = 0; j < colums; j++)
