@@ -6,11 +6,16 @@
 8 4 2 4
 Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3. */
 
-int Prompt(string msg)
+int PromptPositiv(string msg)
 {
     Console.Write(msg);
     int num = Convert.ToInt32(Console.ReadLine());
-    return num;
+    while (num < 1)
+    {
+        Console.WriteLine("Введено не верное значение попробуйте ещё раз");
+        num = Convert.ToInt32(Console.ReadLine());            
+    } 
+    return num; 
 }
 
 int[,] CreateMatrixIntRnd(int str, int col, int min, int max)
@@ -35,7 +40,7 @@ void PrintMatrixInt(int[,] arr)
     {
         for (int j = 0; j < colums; j++)
         {
-            Console.Write($"{arr[i, j], 6}");
+            Console.Write($"{arr[i, j],6}");
         }
         Console.WriteLine();
     }
@@ -60,7 +65,7 @@ void PrintMatrixInt(int[,] arr)
 
 }
  */
-double[] AverageColume(int[,] arr)          
+double[] AverageColume(int[,] arr)
 {
     double[] result = new double[arr.GetLength(1)];
     double aver = 0;
@@ -73,7 +78,7 @@ double[] AverageColume(int[,] arr)
             sum = sum + arr[i, j];
         }
         aver = sum / arr.GetLength(0);
-        result[j] = aver; 
+        result[j] = Math.Round(aver, 2, MidpointRounding.AwayFromZero);
     }
     return result;
 
@@ -82,13 +87,13 @@ void PrintArray(double[] arr)  //метод вывода массива на э�
 {
     for (int i = 0; i < arr.Length; i++)
     {
-       Console.Write($"{arr[i], 6}");
+        Console.Write($"{arr[i],6}");
     }
-    
+
 }
 
-int row = Prompt("Введите колличество строк ");
-int colume = Prompt("Введите колличество столбцов ");
+int row = PromptPositiv("Введите колличество строк ");
+int colume = PromptPositiv("Введите колличество столбцов ");
 int[,] array = CreateMatrixIntRnd(row, colume, 0, 10);
 PrintMatrixInt(array);
 

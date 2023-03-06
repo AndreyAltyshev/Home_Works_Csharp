@@ -9,11 +9,16 @@
 
 1, 7 -> такого элемента в массиве нет */
 
-int Prompt(string msg)
+int KeybordInputMoreInt(string msg, int more)
 {
-    Console.Write(msg);
+   Console.Write(msg);
     int num = Convert.ToInt32(Console.ReadLine());
-    return num;
+    while (num < more)
+    {
+        Console.WriteLine("Введено не верное значение попробуйте ещё раз ");
+        num = KeybordInputMoreInt(msg, more);         
+    } 
+    return num; 
 }
 
 int[,] CreateArrayIntRnd(int str, int col, int min, int max)
@@ -49,10 +54,10 @@ void SearchElement(int[,] arr, int str, int clmn)
     else Console.WriteLine($"Эллемента массиваа с индексом строки {str} и столбца {clmn} не существует");
 }
 
-int row = Prompt("Введите колличество строк ");
-int colume = Prompt("Введите колличество столбцов ");
+int row = KeybordInputMoreInt("Введите колличество строк ", 1);
+int colume = KeybordInputMoreInt("Введите колличество столбцов ", 1);
 int[,] matrix = CreateArrayIntRnd(row, colume, 0, 10);
 PrintMatrix(matrix);
-int searchIndexRow = Prompt("Введите индекс строки разыскиваемого эллемента ");
-int searchIndexColume = Prompt("Введите индекс столбца разыскиваемого эллемента ");
+int searchIndexRow = KeybordInputMoreInt("Введите индекс строки разыскиваемого эллемента ", 0);
+int searchIndexColume = KeybordInputMoreInt("Введите индекс столбца разыскиваемого эллемента ", 0);
 SearchElement(matrix, searchIndexRow, searchIndexColume);
